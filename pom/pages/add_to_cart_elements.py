@@ -1,7 +1,7 @@
 from playwright.async_api import Page
 
 class AddToCart:
-    def __init__(self, page:Page):
+    def __init__(self, page):
         self.page = page
 
         # Login page

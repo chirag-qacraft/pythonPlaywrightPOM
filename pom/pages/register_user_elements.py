@@ -2,7 +2,7 @@ from playwright.async_api import Page
 
 
 class RegisterUser:
-    def __init__(self, page: Page):
+    def __init__(self, page):
         self.page = page
         self.signUpLink = page.locator("//a[contains(text(),'Signup')]")
 
@@ -55,8 +55,8 @@ class RegisterUser:
             print(f"Error: {e}")
 
     async def signup_form_submit_method(self):
-            await self.nameTextBox.fill("Brett Lee")
-            await self.emailTextBox.fill("brettlee58@gmail.com")
+            await self.nameTextBox.fill("Andrew Flintof")
+            await self.emailTextBox.fill("flintof11@gmail.com")
 
             await self.signUpButton.click()
             print("Sign Up successfully")
