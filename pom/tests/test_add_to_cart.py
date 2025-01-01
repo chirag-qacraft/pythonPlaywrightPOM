@@ -9,15 +9,13 @@ async def test_cart():
         browser = await p.chromium.launch(headless=False)  # Launch browser
         context = await browser.new_context()  # Create a new context (similar to a browser profile)
         page = await context.new_page()
+        await page.goto("https://automationexercise.com/")
 
         cart_obj = AddToCart(page)
-
-        await cart_obj.open_browser_method()
         await cart_obj.login_method()
 
-        printusername = await expect(cart_obj.userVerify).to_have_text("chirag2")
-        print(printusername)
-        await page.wait_for_timeout(15000)
+        print_user_name = await expect(cart_obj.userVerify).to_have_text("chirag2")
+        print(print_user_name)
 
         await cart_obj.add_to_cart_method()
 

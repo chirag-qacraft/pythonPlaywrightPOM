@@ -1,7 +1,7 @@
 from playwright.async_api import Page
 
 class AddToCart:
-    def __init__(self, page):
+    def __init__(self, page:Page):
         self.page = page
 
         # Login page
@@ -43,12 +43,6 @@ class AddToCart:
         #Invoice Download
         self.invoiceDownload = page.locator("//a[contains(text(),'Invoice')]")
 
-    async def open_browser_method(self):
-
-            await self.page.goto("https://automationexercise.com/")
-            await self.loginLink.wait_for(state="visible")
-
-
     async def login_method(self):
         await self.loginLink.click()
         await self.loginEmailTextBox.fill("chirag2@gmail.com")
@@ -83,4 +77,4 @@ class AddToCart:
         await self.paymentButton.click()
         await self.invoiceDownload.click()
 
-        await self.page.wait_for_timeout(15000)
+        await self.page.wait_for_timeout(5000)

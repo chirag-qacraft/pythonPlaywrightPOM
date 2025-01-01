@@ -9,9 +9,9 @@ async def test_register():
         browser = await p.chromium.launch(headless=False)  # Launch browser
         context = await browser.new_context()  # Create a new context (similar to a browser profile)
         page = await context.new_page()
+        await page.goto("https://automationexercise.com/")
 
         register_obj = RegisterUser(page)
-        await register_obj.open_browser_method()
         await register_obj.open_signup_page_method()
         await register_obj.signup_form_submit_method()
         await register_obj.enter_details_method()
