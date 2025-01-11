@@ -42,16 +42,12 @@ class RegisterUser:
 
     async def open_signup_page_method(self):
 
-        try:
             await self.signUpLink.click()
             print("Signup page open successfully")
 
-        except Exception as e:
-            print(f"Error: {e}")
-
     async def signup_form_submit_method(self):
-            await self.nameTextBox.fill("Brett Lee")
-            await self.emailTextBox.fill("brettlee58@gmail.com")
+            await self.nameTextBox.fill("Andrew Flintof")
+            await self.emailTextBox.fill("flintof11@gmail.com")
 
             await self.signUpButton.click()
             print("Sign Up successfully")
