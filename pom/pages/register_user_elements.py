@@ -71,8 +71,8 @@ class RegisterUser:
             await self.submitButton.click()
 
     async def continue_method(self):
-            await self.page.wait_for_timeout(15000)
-            await self.continueButton.click()
+        await self.page.wait_for_load_state("domcontentloaded")
+        await self.continueButton.click()
 
     async def delete_acc_method(self):
             await self.deleteAccLink.click()

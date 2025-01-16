@@ -9,7 +9,7 @@ async def browser_setup():
         context = await browser.new_context(no_viewport=True)
         page = await context.new_page()
         base_url = "https://automationexercise.com/"
-        await page.goto(base_url)
+        await page.goto(base_url, timeout= 100*600)
         await page.wait_for_load_state("domcontentloaded")
         yield page, base_url
         await context.close()
