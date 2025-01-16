@@ -1,8 +1,6 @@
-import os
 from pom.pages.register_user_elements import RegisterUser
 from pom.pages.add_to_cart_elements import AddToCart
-import pytest, allure
-import pytest_asyncio
+import pytest, allure, os,pytest_asyncio
 from playwright.async_api import expect
 
 
